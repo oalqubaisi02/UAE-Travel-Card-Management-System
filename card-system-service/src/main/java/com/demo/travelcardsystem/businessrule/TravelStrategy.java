@@ -93,7 +93,7 @@ public class TravelStrategy {
         anyThreeZoneStrategy.accept(3.20);
         anyJourneyByBus.accept(1.80, TransportType.BUS);
 
-        this.ruleCollection.setMaxFare(3.20);
+        this.ruleCollection.setMaxFare(5.00);
 
         return this.ruleCollection;
     }
