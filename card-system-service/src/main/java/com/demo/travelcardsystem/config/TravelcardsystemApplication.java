@@ -17,6 +17,8 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication(scanBasePackages = {"com.demo.travelcardsystem"})
 public class TravelcardsystemApplication{
 
+    public static Set<Station> stations;
+    
     public static void main(String[] args) {
         SpringApplication.run(TravelcardsystemApplication.class, args);
     }

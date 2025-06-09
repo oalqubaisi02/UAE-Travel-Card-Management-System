@@ -6,8 +6,11 @@ import com.demo.travelcardsystem.model.response.TravelCardResponse;
 import com.demo.travelcardsystem.service.TravellerService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
+import com.demo.travelcardsystem.config.TravelcardsystemApplication;
+import com.demo.travelcardsystem.entity.Station;
+import java.util.Set;
 
 @RestController
 @RequestMapping(value = "/api/card")
@@ -47,5 +50,9 @@ public class TravellerController {
         return travellerService.fetchAllCard();
     }
 
+    @GetMapping("/stations")
+    public Set<Station> getStations() {
+        return TravelcardsystemApplication.stations;
+    }
 
 }
