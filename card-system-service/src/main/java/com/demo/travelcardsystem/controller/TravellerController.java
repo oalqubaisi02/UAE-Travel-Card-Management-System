@@ -3,8 +3,11 @@ package com.demo.travelcardsystem.controller;
 import com.demo.travelcardsystem.model.request.CardRegistrationRequest;
 import com.demo.travelcardsystem.model.request.SwipeRequest;
 import com.demo.travelcardsystem.model.response.TravelCardResponse;
+import com.demo.travelcardsystem.repository.InMemoryCardTransactionRepository;
 import com.demo.travelcardsystem.service.TravellerService;
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -50,9 +53,12 @@ public class TravellerController {
         return travellerService.fetchAllCard();
     }
 
+    @Autowired
+    private InMemoryCardTransactionRepository inMemoryCardTransactionRepository;
+
     @GetMapping("/stations")
-    public Set<Station> getStations() {
-        return TravelcardsystemApplication.stations;
+    public Set<Station> getAllStations() {
+        return inMemoryCardTransactionRepository.getAllStations();
     }
 
 }
